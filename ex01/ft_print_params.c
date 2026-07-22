@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_main.c                            :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amanet <amanet@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/22 14:44:59 by amanet            #+#    #+#             */
-/*   Updated: 2026/07/22 15:17:25 by amanet           ###   ########.fr       */
+/*   Created: 2026/07/22 14:58:39 by amanet            #+#    #+#             */
+/*   Updated: 2026/07/22 15:16:21 by amanet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 int	main(int argc, char **argv)
 {
 	int	i;
+	int	j;
 
-	if (argc == -1)
-		return (0);
-	i = 0;
-	while (argv[0][i])
+	i = 1;
+	while (i < argc)
 	{
-		write(1, &argv[0][i], 1);
+		j = 0;
+		while (argv[i][j])
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
 		i++;
 	}
-	write(1, "\n", 1);
 	return (0);
 }
